@@ -6,7 +6,8 @@ public enum MarcVersion {
 	OCLC("OCLC", "OCLC"),
 	GENT("GENT", "Universiteitsbibliotheek Gent"),
 	SZTE("SZTE", "Szegedi Tudományegyetem"),
-	FENNICA("FENNICA", "National Library of Finland")
+	FENNICA("FENNICA", "National Library of Finland"),
+	JYKDOK("JYKDOK", "Jyväskylä University Library")
 	;
 
 	String code;

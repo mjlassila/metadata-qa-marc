@@ -24,7 +24,7 @@ public class MappingToJson {
 	private boolean exportSubfieldCodes = false;
 	private static List<String> nonMarc21TagLibraries = Arrays.asList(
 		"oclctags", "fennicatags", "dnbtags", "sztetags", "genttags",
-		"holdings"
+		"holdings","jykdoktags"
 	);
 	private Map<String, Object> mapping;
 
