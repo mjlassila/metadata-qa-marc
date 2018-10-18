@@ -29,13 +29,18 @@ public class Tag852 extends DataFieldDefinition {
 		cardinality = Cardinality.Repeatable;
 
 		setSubfieldsWithCardinality(
-			"a", "Kirjastokoodi", "NR",
-			"b", "Kurssikirja", "NR",
-			"c", "Kokoelma", "NR",
-			"t", "Kopioita", "NR"
+			"a", "Sijainti", "NR",
+			"b", "Alayksikkö tai kokoelma", "R",
+			"c", "Sijainti hyllyssä", "R",
+			"t", "Kappaleen numero", "NR",
+			"h", "Paikkamerkin hyllyluokka", "NR"
 		);
 
-		ind1 = new Indicator();
+		ind1 = new Indicator("Hyllyluokitus").setCodes(
+				"8", "Muu järjestelmä"
+			)
+			.setMqTag("level");
+
 		ind2 = new Indicator();
 
 		getSubfield("c").setMqTag("rdf:value");

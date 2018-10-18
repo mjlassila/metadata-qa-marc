@@ -5,35 +5,36 @@ import de.gwdg.metadataqa.marc.definition.DataFieldDefinition;
 import de.gwdg.metadataqa.marc.definition.Indicator;
 
 /**
- * https://kirjasto.jyu.fi/intra/kokoelmat/luettelointi/kirjastokohtaisetkentat
+ * Locally defined field in Jyväskylä University Library
  */
-public class Tag500 extends DataFieldDefinition {
+public class Tag593 extends DataFieldDefinition {
 
-	private static Tag500 uniqueInstance;
+	private static Tag593 uniqueInstance;
 
-	private Tag500() {
+	private Tag593() {
 		initialize();
 		postCreation();
 	}
 
-	public static Tag500 getInstance() {
+	public static Tag593 getInstance() {
 		if (uniqueInstance == null)
-			uniqueInstance = new Tag500();
+			uniqueInstance = new Tag593();
 		return uniqueInstance;
 	}
 
 	private void initialize() {
-		tag = "500";
-		label = "OPINTOVAATIMUSARTIKKELI";
-		mqTag = "Artikkeli";
+		tag = "593";
+		label = "JYKDOK-huomautus";
+		mqTag = "JykdokHuomautus";
 		cardinality = Cardinality.Repeatable;
-
-		setSubfieldsWithCardinality(
-			"a", "Huomautus artikkelista opintovaatimuksissa", "R"
-		);
+		descriptionUrl = "";
 
 		ind1 = new Indicator();
 		ind2 = new Indicator();
+
+		setSubfieldsWithCardinality(
+			"a", "Huomautus", "NR"
+		);
 
 		getSubfield("a").setMqTag("rdf:value");
 	}

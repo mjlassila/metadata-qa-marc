@@ -69,5 +69,8 @@ public class Tag653 extends DataFieldDefinition {
 		putVersionSpecificSubfields(MarcVersion.FENNICA, Arrays.asList(
 			new SubfieldDefinition("9", "Sanastokoodi", "NR")
 		));
+		putVersionSpecificSubfields(MarcVersion.JYKDOK, Arrays.asList(
+			new SubfieldDefinition("9", "Sanastokoodi", "NR")
+		));
 	}
 }
