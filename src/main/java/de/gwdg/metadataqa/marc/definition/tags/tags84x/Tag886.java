@@ -36,8 +36,7 @@ public class Tag886 extends DataFieldDefinition {
 				"0", "Leader",
 				"1", "Variable control fields (002-009)",
 				"2", "Variable data fields (010-999)"
-			)
-			.setMqTag("typeOfField");
+			).setMqTag("typeOfField");
 		ind2 = new Indicator();
 
 		setSubfieldsWithCardinality(

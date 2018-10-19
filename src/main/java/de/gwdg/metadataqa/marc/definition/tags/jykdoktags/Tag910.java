@@ -29,8 +29,6 @@ public class Tag910 extends DataFieldDefinition {
 		cardinality = Cardinality.Repeatable;
 		descriptionUrl = "http://marc21.kansalliskirjasto.fi/bib/9XX.xml#910";
 
-		ind1 = new Indicator();
-		ind2 = new Indicator();
 
 		setSubfieldsWithCardinality(
 			"a", "Pääyhteisö", "NR",
@@ -45,6 +43,19 @@ public class Tag910 extends DataFieldDefinition {
 			"8", "Linkki ja järjestysnumero", "NR"
 			
 		);
+
+		ind1 = new Indicator("Nimen tyyppi").setCodes(
+				" ", "Määrittelemätön",
+				"1", "Valtion tai hallintoalueen nimi",
+				"2", "Muu yhteisö"
+			)
+			.setMqTag("tyyppi");
+
+		ind2 = new Indicator("Viittauksen tyyppi").setCodes(
+				" ", "Katso-viittaus",
+				"1", "Katso myös -viittaus"
+			)
+			.setMqTag("viittaustyyppi");
 
 		getSubfield("a").setMqTag("rdf:value");
 	}

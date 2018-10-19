@@ -29,8 +29,17 @@ public class Tag940 extends DataFieldDefinition {
 		cardinality = Cardinality.Repeatable;
 		descriptionUrl = "http://marc21.kansalliskirjasto.fi/bib/9XX.xml#940";
 
-		ind1 = new Indicator();
-		ind2 = new Indicator();
+		ind1 = new Indicator("Viittauksen tyyppi").setCodes(
+				" ", "Katso-viittaus",
+				"1", "Katso myös -viittaus"
+			)
+			.setMqTag("tyyppi");
+
+		ind2 = new Indicator("Ohitusindikaattori").setCodes(
+				"0-9", "Ohitettavien merkkien määrä"
+			)
+			.setMqTag("merkkimaara");
+		ind2.getCode("0-9").setRange(true);
 
 		setSubfieldsWithCardinality(
 			"a", "Nimeke", "NR",

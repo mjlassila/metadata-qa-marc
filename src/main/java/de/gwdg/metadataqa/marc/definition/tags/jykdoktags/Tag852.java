@@ -37,6 +37,7 @@ public class Tag852 extends DataFieldDefinition {
 		);
 
 		ind1 = new Indicator("Hyllyluokitus").setCodes(
+				" ", "Ei määritetty",
 				"8", "Muu järjestelmä"
 			)
 			.setMqTag("level");
