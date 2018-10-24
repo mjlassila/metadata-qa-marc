@@ -22,8 +22,6 @@ public class ReadMarcTest {
 			MarcRecord record = MarcFactory.createFromMarc4j(marc4jRecord);
 			assertEquals(marc4jRecord.getLeader().marshal(), record.getLeader().getLeaderString());
 			switch (marc4jRecord.getControlNumber()) {
-				case "   00000002 " : test02(record); break;
-				case "   00000004 " : test04(record); break;
 				case "   00000006 " : test06(record); break;
 				case "   00000007 " : test07(record); break;
 				case "   00000009 " : test09(record); break;
@@ -33,87 +31,6 @@ public class ReadMarcTest {
 			// System.err.printf("%s: %s\n", Control001.getMqTag(), record.getControl001().getContent());
 			// System.err.println(record.formatForIndex());
 		}
-	}
-
-	private void test02(MarcRecord record) {
-		assertEquals("00720cam a22002051  4500", record.getLeader().getLeaderString());
-		String expected = "IdentifiedByLccn:    00000002 \n" +
-			"SystemControlNumber: (OCoLC)5853149\n" +
-			"SystemControlNumber_recordNumber: 5853149\n" +
-			"SystemControlNumber_organizationCode: OCoLC\n" +
-			"AdminMetadata_catalogingAgency: United States, Library of Congress\n" +
-			"AdminMetadata_transcribingAgency: DSI\n" +
-			"AdminMetadata_modifyingAgency: United States, Library of Congress\n" +
-			"ClassificationLcc_ind1: Item is in LC\n" +
-			"ClassificationLcc_ind2: Assigned by LC\n" +
-			"ClassificationLcc: RX671\n" +
-			"ClassificationLcc_itemPortion: .A92\n" +
-			"MainPersonalName_ind1: Surname\n" +
-			"MainPersonalName_personalName: Aurand, Samuel Herbert,\n" +
-			"MainPersonalName_dates: 1854-\n" +
-			"Title_ind1: Added entry\n" +
-			"Title_ind2: No nonfiling characters\n" +
-			"Title_mainTitle: Botanical materia medica and pharmacology;\n" +
-			"Title_subtitle: drugs considered from a botanical, pharmaceutical, physiological, therapeutical and toxicological standpoint.\n" +
-			"Title_responsibilityStatement: By S. H. Aurand.\n" +
-			"Publication_ind1: Not applicable/No information provided/Earliest available publisher\n" +
-			"Publication_place: Chicago,\n" +
-			"Publication_agent: P. H. Mallen Company,\n" +
-			"Publication_date: 1899.\n" +
-			"PhysicalDescription_extent: 406 p.\n" +
-			"PhysicalDescription_dimensions: 24 cm.\n" +
-			"GeneralNote: Homeopathic formulae.\n" +
-			"Topic_ind1: No information provided\n" +
-			"Topic_ind2: Library of Congress Subject Headings\n" +
-			"Topic_topicalTerm: Botany, Medical.\n" +
-			"Topic_ind1: No information provided\n" +
-			"Topic_ind2: Library of Congress Subject Headings\n" +
-			"Topic_topicalTerm: Homeopathy\n" +
-			"Topic_generalSubdivision: Materia medica and therapeutics.\n";
-		assertEquals(expected, record.formatForIndex());
-	}
-
-	private void test04(MarcRecord record) {
-		assertEquals("00720cam a2200229 a 4500", record.getLeader().getLeaderString());
-		String expected = "IdentifiedByLccn:    00000004 \n" +
-			"SystemControlNumber: (OCoLC)ocm34987929\n" +
-			"SystemControlNumber_recordNumber: ocm34987929\n" +
-			"SystemControlNumber_organizationCode: OCoLC\n" +
-			"AdminMetadata_catalogingAgency: United States, Library of Congress\n" +
-			"AdminMetadata_transcribingAgency: VRT\n" +
-			"AdminMetadata_modifyingAgency: United States, Library of Congress\n" +
-			"AuthenticationCode: LC Copy Cataloging\n" +
-			"GeographicCoverage_code: n-us---\n" +
-			"ClassificationLcc_ind1: Item is in LC\n" +
-			"ClassificationLcc_ind2: Assigned by LC\n" +
-			"ClassificationLcc: KF505.Z9\n" +
-			"ClassificationLcc_itemPortion: C43\n" +
-			"MainPersonalName_ind1: Surname\n" +
-			"MainPersonalName_personalName: Chadman, Charles E.\n" +
-			"MainPersonalName_fullerForm: (Charles Erehart),\n" +
-			"MainPersonalName_dates: 1873-\n" +
-			"Title_ind1: Added entry\n" +
-			"Title_ind2: No nonfiling characters\n" +
-			"Title_mainTitle: Personal rights and the domestic relations /\n" +
-			"Title_responsibilityStatement: by Charles E. Chadman.\n" +
-			"Publication_ind1: Not applicable/No information provided/Earliest available publisher\n" +
-			"Publication_place: Conneaut, OH :\n" +
-			"Publication_agent: Home Study Pub. Co.,\n" +
-			"Publication_date: 1899.\n" +
-			"PhysicalDescription_extent: xi, 186 p. ;\n" +
-			"PhysicalDescription_dimensions: 18 cm.\n" +
-			"SeriesStatementAddedEntryTitle_ind2: No nonfiling characters\n" +
-			"SeriesStatementAddedEntryTitle: Home law school series ;\n" +
-			"SeriesStatementAddedEntryTitle_volume: [v. 1] no. 3\n" +
-			"Topic_ind1: No information provided\n" +
-			"Topic_ind2: Library of Congress Subject Headings\n" +
-			"Topic_topicalTerm: Persons (Law)\n" +
-			"Topic_geographicSubdivision: United States.\n" +
-			"Topic_ind1: No information provided\n" +
-			"Topic_ind2: Library of Congress Subject Headings\n" +
-			"Topic_topicalTerm: Domestic relations\n" +
-			"Topic_geographicSubdivision: United States.\n";
-		assertEquals(expected, record.formatForIndex());
 	}
 
 	private void test06(MarcRecord record) {
